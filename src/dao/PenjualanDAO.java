@@ -70,7 +70,8 @@ public class PenjualanDAO {
                 + " OR p.totalHarga LIKE '%" + query + "%'"
                 + " OR p.tanggalPenjualan LIKE '%" + query + "%'"
                 + " OR c.namaCustomer LIKE '%" + query + "%'"
-                + " OR s.namaStaff LIKE '%" + query + "%')";
+                + " OR s.namaStaff LIKE '%" + query + "%')"
+                + " ORDER BY p.tanggalPenjualan DESC";
         System.out.println("Mengambil data Penjualan ...");
         
         List<Penjualan> list = new ArrayList();
@@ -110,7 +111,7 @@ public class PenjualanDAO {
                             s,
                             rs.getFloat("p.totalHarga"),
                             rs.getString("p.jenisPembayaran"),
-                            rs.getString("p.tanggalPenjualan"),
+                            rs.getString("p.tanggalPenjualan").replace(".0", ""),
                             rs.getInt("p.jumlahPenjualan")
                             
                     );

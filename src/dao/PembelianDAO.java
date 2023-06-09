@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import model.Customer;
 import model.Kendaraan;
 import model.Pembelian;
 import model.Suplier;
@@ -69,7 +68,8 @@ public class PembelianDAO {
                 + " OR k.hargaKendaraan LIKE '%" + query + "%'"
                 + " OR p.jumlahSuplai LIKE '%" + query + "%'"
                 + " OR p.totalHargaBeli LIKE '%" + query + "%'"
-                + " OR s.namaSuplier LIKE '%" + query + "%')";
+                + " OR s.namaSuplier LIKE '%" + query + "%')"
+                + " ORDER BY p.tanggalPembelian DESC";
         System.out.println("Mengambil data Pembelian ...");
         
         List<Pembelian> list = new ArrayList();
@@ -93,13 +93,14 @@ public class PembelianDAO {
                             rs.getInt("s.idSuplier"), 
                             rs.getString("s.namaSuplier")
                     );
+                    
                     Pembelian p = new Pembelian(
                             rs.getInt("p.idPembelian"),
                             s,
                             k,
                             rs.getFloat("p.totalHargaBeli"),
                             rs.getInt("p.jumlahSuplai"),
-                            rs.getString("p.tanggalPembelian")
+                            rs.getString("p.tanggalPembelian").replace(".0", "")
                     );
                     
                     list.add(p);

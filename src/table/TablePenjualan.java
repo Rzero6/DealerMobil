@@ -8,7 +8,6 @@ package table;
 import java.text.DecimalFormat;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import model.Kendaraan;
 import model.Penjualan;
 
 /**

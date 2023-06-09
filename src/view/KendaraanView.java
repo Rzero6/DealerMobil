@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.TableModel;
 import model.Kendaraan;
+import table.TableAdjuster;
 
 /**
  *
@@ -280,6 +281,7 @@ public class KendaraanView extends javax.swing.JInternalFrame {
 
     private void setTableKendaraan() {
         tableKendaraan.setModel(kendaraanControl.getTableKendaraan(""));
+        TableAdjuster.resizeColumnWidth(tableKendaraan);
     }
 
     private void setEditDelBtn(boolean b) {

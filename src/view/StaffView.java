@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.TableModel;
 import model.Staff;
+import table.TableAdjuster;
 
 /**
  *
@@ -254,6 +255,7 @@ public class StaffView extends javax.swing.JInternalFrame {
 
     private void setTableStaff() {
         tableStaff.setModel(staffControl.getTableStaff(""));
+        TableAdjuster.resizeColumnWidth(tableStaff);
     }
 
     private void setEditDelBtn(boolean b) {

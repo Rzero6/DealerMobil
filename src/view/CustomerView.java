@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.TableModel;
 import model.Customer;
+import table.TableAdjuster;
 
 /**
  *
@@ -249,6 +250,7 @@ public class CustomerView extends javax.swing.JInternalFrame {
 
     private void setTableCustomer() {
         tableCustomer.setModel(customerControl.getTableCustomer(""));
+        TableAdjuster.resizeColumnWidth(tableCustomer);
     }
 
     private void setEditDelBtn(boolean b) {

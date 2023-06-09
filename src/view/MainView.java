@@ -19,8 +19,8 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
-        tabListener();
         setTab();
+        tabListener();
     }
 
     /**
@@ -46,7 +46,7 @@ public class MainView extends javax.swing.JFrame {
         penjualanTab.setLayout(penjualanTabLayout);
         penjualanTabLayout.setHorizontalGroup(
             penjualanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         penjualanTabLayout.setVerticalGroup(
             penjualanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -59,7 +59,7 @@ public class MainView extends javax.swing.JFrame {
         kendaraanTab.setLayout(kendaraanTabLayout);
         kendaraanTabLayout.setHorizontalGroup(
             kendaraanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         kendaraanTabLayout.setVerticalGroup(
             kendaraanTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,7 +72,7 @@ public class MainView extends javax.swing.JFrame {
         customerTab.setLayout(customerTabLayout);
         customerTabLayout.setHorizontalGroup(
             customerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         customerTabLayout.setVerticalGroup(
             customerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,7 +85,7 @@ public class MainView extends javax.swing.JFrame {
         staffTab.setLayout(staffTabLayout);
         staffTabLayout.setHorizontalGroup(
             staffTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         staffTabLayout.setVerticalGroup(
             staffTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +98,7 @@ public class MainView extends javax.swing.JFrame {
         suplierTab.setLayout(suplierTabLayout);
         suplierTabLayout.setHorizontalGroup(
             suplierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         suplierTabLayout.setVerticalGroup(
             suplierTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +111,7 @@ public class MainView extends javax.swing.JFrame {
         pembelianTab.setLayout(pembelianTabLayout);
         pembelianTabLayout.setHorizontalGroup(
             pembelianTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 915, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         pembelianTabLayout.setVerticalGroup(
             pembelianTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +124,7 @@ public class MainView extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainTab, javax.swing.GroupLayout.DEFAULT_SIZE, 915, Short.MAX_VALUE)
+            .addComponent(mainTab, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

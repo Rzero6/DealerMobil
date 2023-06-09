@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.TableModel;
 import model.Suplier;
+import table.TableAdjuster;
 
 /**
  *
@@ -223,6 +224,7 @@ public class SuplierView extends javax.swing.JInternalFrame {
 
     private void setTableSuplier() {
         tableSuplier.setModel(suplierControl.getTableSuplier(""));
+        TableAdjuster.resizeColumnWidth(tableSuplier);
     }
 
     private void setEditDelBtn(boolean b) {
