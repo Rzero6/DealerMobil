@@ -6,8 +6,8 @@ package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import control.StaffControl;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.TableModel;
 import model.Staff;
 
@@ -15,7 +15,7 @@ import model.Staff;
  *
  * 
  */
-public class StaffView extends javax.swing.JFrame {
+public class StaffView extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form StaffView
@@ -24,6 +24,9 @@ public class StaffView extends javax.swing.JFrame {
     private int selectedID;
     public StaffView() {
         initComponents();
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
+        ui.setNorthPane(null);
         staffControl = new StaffControl();
         setJabatanDropdown();
         setTableStaff();
@@ -49,7 +52,7 @@ public class StaffView extends javax.swing.JFrame {
         jabatanDropdown = new javax.swing.JComboBox<>();
         cleartBtn = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         tableStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,7 +109,7 @@ public class StaffView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(addbtn)
@@ -123,7 +126,7 @@ public class StaffView extends javax.swing.JFrame {
                                 .addComponent(jabatanDropdown, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(gajiTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(cleartBtn))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {gajiTxt, jabatanDropdown, namaTxt});
@@ -133,14 +136,13 @@ public class StaffView extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(93, 93, 93)
+                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addbtn)
                     .addComponent(editBtn)
                     .addComponent(delBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(namaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -148,8 +150,9 @@ public class StaffView extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(gajiTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(74, 74, 74)
-                        .addComponent(cleartBtn)))
-                .addContainerGap(156, Short.MAX_VALUE))
+                        .addComponent(cleartBtn))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -256,6 +259,7 @@ public class StaffView extends javax.swing.JFrame {
     private void setEditDelBtn(boolean b) {
         editBtn.setEnabled(b);
         delBtn.setEnabled(b);
+        addbtn.setEnabled(!b);
     }
     private void clearAll(){
         namaTxt.setText("");
